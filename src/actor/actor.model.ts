@@ -5,7 +5,7 @@ import mongoose from 'mongoose';
 export class Actor {
 	_id?: mongoose.Types.ObjectId;
 
-	@Prop({ required: true })
+	@Prop({ default: '' })
 	name: string;
 
 	@Prop({ unique: true })

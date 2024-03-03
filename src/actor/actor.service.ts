@@ -1,8 +1,8 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Actor } from './actor.model';
-import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { ActorDto } from './actor.dto';
+import { Actor } from './actor.model';
 
 @Injectable()
 export class ActorService {
@@ -10,7 +10,9 @@ export class ActorService {
 		@InjectModel(Actor.name) private readonly actorModel: Model<Actor>
 	) {}
 	async bySlug(slug: string) {
-		return this.actorModel.findOne({ slug }).exec();
+		const doc = await this.actorModel.findOne({ slug }).exec();
+		if (!doc) throw new NotFoundException('Актер не найден');
+		return doc;
 	}
 	async getAll(searchTerm?: string) {
 		let options = {};

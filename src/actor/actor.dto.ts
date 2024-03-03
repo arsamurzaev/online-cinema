@@ -1,12 +1,15 @@
-import { IsString } from 'class-validator';
+import { IsOptional, IsString } from 'class-validator';
 
 export class ActorDto {
 	@IsString()
-	name: string;
+	@IsOptional()
+	name?: string;
 
 	@IsString()
-	slug: string;
+	@IsOptional()
+	slug?: string;
 
 	@IsString()
-	photo: string;
+	@IsOptional()
+	photo?: string;
 }
