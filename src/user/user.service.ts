@@ -56,12 +56,11 @@ export class UserService {
 					},
 				],
 			};
-
-			return this.userModel
-				.find(options)
-				.select('-password -updateAt -__v')
-				.sort({ createdAt: 'desc' });
 		}
+		return this.userModel
+			.find(options)
+			.select('-password -updateAt -__v')
+			.sort({ createdAt: 'desc' });
 	}
 
 	async delete(id: string) {

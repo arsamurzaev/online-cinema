@@ -64,13 +64,13 @@ export class UserController {
 
 		@Body() updateUserDto: UpdateUserDto
 	) {
-		this.userService.updateProfile(id, updateUserDto);
+		return this.userService.updateProfile(id, updateUserDto);
 	}
 
 	@Delete(':id')
 	@HttpCode(200)
 	@Auth('admin')
 	async deleteUser(@Param('id', IdValidationPipe) id: string) {
-		this.userService.delete(id);
+		return this.userService.delete(id);
 	}
 }
