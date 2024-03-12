@@ -1,5 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Types } from 'mongoose';
 import { Actor } from 'src/actor/actor.model';
+import { Genre } from 'src/genre/genre.model';
 
 export class Parameters {
 	@Prop()
@@ -38,11 +40,11 @@ export class Movie {
 	@Prop({ unique: true })
 	slug: string;
 
-	@Prop()
-	genres: string[];
+	@Prop({ type: Types.ObjectId, ref: 'Genre' })
+	genres: Genre[];
 
-	@Prop({ ref: () => Actor })
-	actors: Ref<Actor>[];
+	@Prop({ type: Types.ObjectId, ref: 'Actor' })
+	actors: Actor[];
 
 	@Prop({ default: false })
 	isSendTelegram?: boolean;

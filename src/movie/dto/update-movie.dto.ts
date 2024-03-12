@@ -7,11 +7,11 @@ export class Parameters {
 	@IsNumber()
 	duration: number;
 
-	@IsNumber()
+	@IsString()
 	country: string;
 }
 
-export class CreateMovieDto {
+export class UpdateMovieDto {
 	@IsString()
 	poster: string;
 
