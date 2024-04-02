@@ -3,12 +3,12 @@ import {
 	Injectable,
 	UnauthorizedException,
 } from '@nestjs/common';
+import { JwtService } from '@nestjs/jwt';
 import { InjectModel } from '@nestjs/mongoose';
+import { compare, genSalt, hash } from 'bcryptjs';
 import { Model } from 'mongoose';
 import { User } from 'src/user/user.model';
 import { AuthDto } from './dto/auth.dto';
-import { hash, compare, genSalt } from 'bcryptjs';
-import { JwtService } from '@nestjs/jwt';
 import { RefreshTokenDto } from './dto/refreshToken.dto';
 
 @Injectable()

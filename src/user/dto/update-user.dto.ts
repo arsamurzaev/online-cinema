@@ -6,9 +6,9 @@ export class UpdateUserDto {
 
 	@IsString()
     @IsOptional()
-	password?: string;
+	password: string;
 
 	@IsBoolean()
 	@IsOptional()
-	isAdmin?: boolean;
+	isAdmin: boolean;
 }

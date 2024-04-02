@@ -16,6 +16,8 @@ export class Parameters {
 
 @Schema({ timestamps: true })
 export class Movie {
+	_id?: Types.ObjectId;
+
 	@Prop()
 	poster: string;
 
@@ -24,9 +26,6 @@ export class Movie {
 
 	@Prop()
 	title: string;
-
-	@Prop()
-	description: string;
 
 	@Prop()
 	videoUrl: string;

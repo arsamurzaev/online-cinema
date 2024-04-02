@@ -22,9 +22,6 @@ export class UpdateMovieDto {
 	title: string;
 
 	@IsString()
-	description: string;
-
-	@IsString()
 	videoUrl: string;
 
 	@IsString()
@@ -38,7 +35,6 @@ export class UpdateMovieDto {
 	@IsString({ each: true })
 	actors: string[];
 
-	@IsString()
 	isSendTelegram?: boolean;
 
 	@IsObject()

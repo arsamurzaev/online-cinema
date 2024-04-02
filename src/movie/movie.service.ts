@@ -67,7 +67,7 @@ export class MovieService {
 
 	async updateCountOpened(slug: string) {
 		const updateDoc = await this.movieModel
-			.findOneAndUpdate({ slug }, { $inc: { countOpened: 1 } }, {new: true})
+			.findOneAndUpdate({ slug }, { $inc: { countOpened: 1 } }, { new: true })
 			.exec();
 
 		if (!updateDoc) {
@@ -85,7 +85,7 @@ export class MovieService {
 	async byId(_id: string) {
 		const movie = this.movieModel.findById(_id);
 		if (!movie) {
-			throw new NotFoundException('Жанр не найден');
+			throw new NotFoundException('Фильм не найден');
 		}
 		return movie;
 	}
@@ -96,7 +96,6 @@ export class MovieService {
 			poster: '',
 			actors: [],
 			genres: [],
-			description: '',
 			title: '',
 			videoUrl: '',
 			slug: '',
@@ -116,7 +115,7 @@ export class MovieService {
 			.exec();
 
 		if (!updateDoc) {
-			throw new NotFoundException('Жанр не найден');
+			throw new NotFoundException('Фильм не найден');
 		}
 
 		return updateDoc;
@@ -126,7 +125,7 @@ export class MovieService {
 		const deleteDoc = await this.movieModel.findByIdAndDelete(id).exec();
 
 		if (!deleteDoc) {
-			throw new NotFoundException('Жанр не найден');
+			throw new NotFoundException('Фильм не найден');
 		}
 
 		return deleteDoc;

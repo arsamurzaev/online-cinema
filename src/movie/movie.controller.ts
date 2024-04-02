@@ -57,7 +57,7 @@ export class MovieController {
 	}
 
 	// Admin
-
+	
 	@Get('/:id')
 	@Auth('admin')
 	async get(@Param('id', IdValidationPipe) id: string) {

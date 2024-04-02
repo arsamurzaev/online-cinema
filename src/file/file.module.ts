@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { FileService } from './file.service';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { path } from 'app-root-path';
 import { FileController } from './file.controller';
-import {ServeStaticModule} from '@nestjs/serve-static';
-import {path} from 'app-root-path';
+import { FileService } from './file.service';
 
 @Module({
   imports: [
