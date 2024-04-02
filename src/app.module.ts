@@ -1,15 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
-import { getMongoDbConfig } from './config/mongo.config';
-import { AuthModule } from './auth/auth.module';
-import { UserModule } from './user/user.module';
-import { GenreModule } from './genre/genre.module';
-import { FileModule } from './file/file.module';
 import { ActorModule } from './actor/actor.module';
+import { AuthModule } from './auth/auth.module';
+import { getMongoDbConfig } from './config/mongo.config';
+import { FileModule } from './file/file.module';
+import { GenreModule } from './genre/genre.module';
 import { MovieModule } from './movie/movie.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -26,7 +24,7 @@ import { MovieModule } from './movie/movie.module';
     ActorModule,
     MovieModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}

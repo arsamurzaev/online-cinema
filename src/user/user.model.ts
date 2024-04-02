@@ -15,7 +15,7 @@ export class User {
 	@Prop({ default: false })
 	isAdmin?: boolean;
 
-	@Prop({ type: Types.ObjectId, ref: 'Movie' })
+	@Prop({ type: "ObjectId", ref: 'Movie' })
 	favorites?: Movie[];
 }
 

@@ -39,10 +39,10 @@ export class Movie {
 	@Prop({ unique: true })
 	slug: string;
 
-	@Prop({ type: Types.ObjectId, ref: 'Genre' })
+	@Prop([{ type: "ObjectId", ref: 'Genre' }])
 	genres: Genre[];
 
-	@Prop({ type: Types.ObjectId, ref: 'Actor' })
+	@Prop([{ type: "Objectid", ref: 'Actor' }])
 	actors: Actor[];
 
 	@Prop({ default: false })
